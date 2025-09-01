@@ -19,7 +19,6 @@ namespace TruckControl.Application.Tests.Services
 
         public TruckServiceTests()
         {
-            // Configurar banco em memória
             _options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase(databaseName: $"TruckTestDb_{Guid.NewGuid()}")
                 .Options;
@@ -28,7 +27,6 @@ namespace TruckControl.Application.Tests.Services
             _mockMapper = new Mock<IMapper>();
             _truckService = new TruckService(_context, _mockMapper.Object);
 
-            // Garantir que o banco está criado
             _context.Database.EnsureCreated();
         }
 
@@ -79,7 +77,6 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task CreateAsync_ValidRequest_ReturnsTruckResponseDTO()
         {
-            // Arrange
             var request = CreateValidTruckRequest();
             var truckEntity = CreateValidTruckEntity(1);
             var expectedResponse = CreateValidTruckResponse(1);
@@ -87,14 +84,11 @@ namespace TruckControl.Application.Tests.Services
             _mockMapper.Setup(m => m.Map<Truck>(request)).Returns(truckEntity);
             _mockMapper.Setup(m => m.Map<TruckResponseDTO>(truckEntity)).Returns(expectedResponse);
 
-            // Act
             var result = await _truckService.CreateAsync(request);
 
-            // Assert
             Assert.NotNull(result);
             Assert.Equal(1, result.Id);
-            
-            // Verificar se realmente foi salvo no banco
+
             var savedTruck = await _context.Trucks.FindAsync(1);
             Assert.NotNull(savedTruck);
         }
@@ -102,7 +96,6 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task UpdateAsync_ExistingTruck_ReturnsUpdatedTruckResponseDTO()
         {
-            // Arrange
             var id = 1;
             var existingTruck = CreateValidTruckEntity(id);
             await _context.Trucks.AddAsync(existingTruck);
@@ -130,10 +123,8 @@ namespace TruckControl.Application.Tests.Services
             _mockMapper.Setup(m => m.Map(request, existingTruck));
             _mockMapper.Setup(m => m.Map<TruckResponseDTO>(existingTruck)).Returns(updatedResponse);
 
-            // Act
             var result = await _truckService.UpdateAsync(id, request);
 
-            // Assert
             Assert.NotNull(result);
             Assert.Equal(id, result.Id);
             Assert.Equal("Blue", result.Color);
@@ -143,21 +134,17 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task UpdateAsync_NonExistingTruck_ReturnsNull()
         {
-            // Arrange
             var id = 999;
             var request = CreateValidTruckRequest();
 
-            // Act
             var result = await _truckService.UpdateAsync(id, request);
 
-            // Assert
             Assert.Null(result);
         }
 
         [Fact]
         public async Task GetByIdAsync_ExistingTruck_ReturnsTruckResponseDTO()
         {
-            // Arrange
             var id = 1;
             var truckEntity = CreateValidTruckEntity(id);
             await _context.Trucks.AddAsync(truckEntity);
@@ -166,10 +153,8 @@ namespace TruckControl.Application.Tests.Services
             var expectedResponse = CreateValidTruckResponse(id);
             _mockMapper.Setup(m => m.Map<TruckResponseDTO>(truckEntity)).Returns(expectedResponse);
 
-            // Act
             var result = await _truckService.GetByIdAsync(id);
 
-            // Assert
             Assert.NotNull(result);
             Assert.Equal(id, result.Id);
         }
@@ -177,20 +162,16 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task GetByIdAsync_NonExistingTruck_ReturnsNull()
         {
-            // Arrange
             var id = 999;
 
-            // Act
             var result = await _truckService.GetByIdAsync(id);
 
-            // Assert
             Assert.Null(result);
         }
 
         [Fact]
         public async Task GetAllAsync_WithTrucks_ReturnsTruckList()
         {
-            // Arrange
             var trucks = new List<Truck>
             {
                 CreateValidTruckEntity(1),
@@ -211,10 +192,8 @@ namespace TruckControl.Application.Tests.Services
             _mockMapper.Setup(m => m.Map<IEnumerable<TruckResponseDTO>>(It.IsAny<List<Truck>>()))
                        .Returns(expectedResponses);
 
-            // Act
             var result = await _truckService.GetAllAsync();
 
-            // Assert
             Assert.NotNull(result);
             Assert.Equal(3, result.Count());
         }
@@ -222,15 +201,12 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task GetAllAsync_EmptyDatabase_ReturnsEmptyList()
         {
-            // Arrange
             var emptyResponseList = new List<TruckResponseDTO>();
             _mockMapper.Setup(m => m.Map<IEnumerable<TruckResponseDTO>>(It.IsAny<List<Truck>>()))
                        .Returns(emptyResponseList);
 
-            // Act
             var result = await _truckService.GetAllAsync();
 
-            // Assert
             Assert.NotNull(result);
             Assert.Empty(result);
         }
@@ -238,19 +214,15 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task DeleteAsync_ExistingTruck_ReturnsTrue()
         {
-            // Arrange
             var id = 1;
             var truckToDelete = CreateValidTruckEntity(id);
             await _context.Trucks.AddAsync(truckToDelete);
             await _context.SaveChangesAsync();
 
-            // Act
             var result = await _truckService.DeleteAsync(id);
 
-            // Assert
             Assert.True(result);
-            
-            // Verificar se foi realmente removido
+
             var deletedTruck = await _context.Trucks.FindAsync(id);
             Assert.Null(deletedTruck);
         }
@@ -258,13 +230,10 @@ namespace TruckControl.Application.Tests.Services
         [Fact]
         public async Task DeleteAsync_NonExistingTruck_ReturnsFalse()
         {
-            // Arrange
             var id = 999;
 
-            // Act
             var result = await _truckService.DeleteAsync(id);
 
-            // Assert
             Assert.False(result);
         }
     }

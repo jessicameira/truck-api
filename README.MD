@@ -17,9 +17,9 @@ Node v22.18.0 -> https://nodejs.org/pt/download
 Angular npm install -g @angular/cli
 ## Instalação de dependencias
 
-Para este projeto foi utilizado o EntityFramework: 
+Para este projeto foi utilizado o EntityFramework version 9.0.8: 
 ```bash
-  dotnet tool list --global: dotnet-ef 9.0.8
+  dotnet tool list --global: dotnet-ef 
 ```
 
 Para instalar
@@ -59,6 +59,11 @@ Instale as dependências
 ```bash
   npm install
   npm run install:all
+```
+
+Rode as migrations antes de iniciar:
+```bash
+  dotnet ef database update --project TruckControl.Infrastructure --startup-project TruckControl.Api
 ```
 
 Inicie o servidor

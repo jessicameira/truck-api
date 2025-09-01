@@ -20,7 +20,6 @@ public class TrucksController : ControllerBase
     {
         try
         {
-            // Validação do request
             if (request == null)
                 return BadRequest("Request cannot be null");
             
@@ -38,8 +37,6 @@ public class TrucksController : ControllerBase
         {
             return StatusCode(500, "An error occurred while creating the truck");
         }
-        //var response = await _service.CreateAsync(request);
-        //return CreatedAtAction(nameof(GetById), new { id = response.Id }, response);
     }
 
     [HttpPut("{id}")]
