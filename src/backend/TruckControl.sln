@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckControl.Api", "TruckControl.Api\TruckControl.Api.csproj", "{FEA55DA4-168D-4517-B064-E7D0F86F98B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckControl.Application", "TruckControl.Application\TruckControl.Application.csproj", "{5E19FD0E-DEFF-48B5-8570-6F9730E62BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckControl.Domain", "TruckControl.Domain\TruckControl.Domain.csproj", "{909C6EE1-4BDB-4B36-90B4-AB4635539E72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckControl.Infrastructure", "TruckControl.Infrastructure\TruckControl.Infrastructure.csproj", "{4B80B424-6F57-49E4-A090-F0B17024F3AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckControl.Api.Tests", "TruckControl.Api.Tests\TruckControl.Api.Tests.csproj", "{3FD18FDD-32D2-481D-B84D-0FD5218034FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEA55DA4-168D-4517-B064-E7D0F86F98B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA55DA4-168D-4517-B064-E7D0F86F98B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA55DA4-168D-4517-B064-E7D0F86F98B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA55DA4-168D-4517-B064-E7D0F86F98B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E19FD0E-DEFF-48B5-8570-6F9730E62BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E19FD0E-DEFF-48B5-8570-6F9730E62BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E19FD0E-DEFF-48B5-8570-6F9730E62BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E19FD0E-DEFF-48B5-8570-6F9730E62BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909C6EE1-4BDB-4B36-90B4-AB4635539E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909C6EE1-4BDB-4B36-90B4-AB4635539E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909C6EE1-4BDB-4B36-90B4-AB4635539E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909C6EE1-4BDB-4B36-90B4-AB4635539E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B80B424-6F57-49E4-A090-F0B17024F3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B80B424-6F57-49E4-A090-F0B17024F3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B80B424-6F57-49E4-A090-F0B17024F3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B80B424-6F57-49E4-A090-F0B17024F3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD18FDD-32D2-481D-B84D-0FD5218034FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD18FDD-32D2-481D-B84D-0FD5218034FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD18FDD-32D2-481D-B84D-0FD5218034FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD18FDD-32D2-481D-B84D-0FD5218034FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

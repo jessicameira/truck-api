@@ -1,0 +1,90 @@
+<div class="truck-table-container">
+  <div class="mobile-header">
+    <h2>TRUCKS</h2>
+  
+    <div class="header-bg-btn">
+      <span class="margin-1rem">Add Item</span>
+      <button matFab  (click)="redirectToNew()" class="custom-blue-btn margin-1rem">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="desktop-header">
+    <h2 class="margin-1rem">TRUCKS</h2>
+
+    <div>
+      <button matFab extended (click)="redirectToNew()" class="custom-blue-btn margin-1rem">
+        Add Item
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="table-wrapper margin-1rem">
+      <div *ngIf="trucks.length > 0">
+          <table class="truck-table">
+              <tr>
+                <th>id</th>
+                <th>Model</th>
+                <th>ChassisNumber</th>
+                <th>Color</th>
+                <th>YearManufacture</th>
+                <th>Plant</th>
+                <th></th>
+              </tr>
+              <tr *ngFor="let truck of trucks">
+              <td>{{ truck.id }}</td>
+              <td>{{ truck.model }}</td>
+              <td>{{ truck.chassisNumber }}</td>
+              <td>{{ truck.color }}</td>
+              <td>{{ truck.yearManufacture }}</td>
+              <td>{{ truck.plant }}</td>
+              <td class="actions">
+                <button matFab (click)="onEditTruck(truck.id)" class="custom-blue-btn margin-1rem">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button matFab (click)="onClickDelete(truck.id)" class="custom-blue-btn margin-1rem">
+                  <mat-icon>delete</mat-icon>
+                </button> </td>
+              </tr>
+          </table>
+      </div>
+  </div>
+
+  <div *ngIf="trucks.length > 0">
+    <div class="card-list" *ngFor="let truck of trucks">
+      <mat-card class="card" appearance="outlined" >
+        <div>
+          <mat-card-header>
+            <mat-card-subtitle>Item {{ truck.id }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content >
+            <div>
+              <div class="flex-grid">
+                <div class="col">Model: {{ truck.model }}</div>
+                <div class="col">Year: {{ truck.yearManufacture }}</div>
+              </div>
+              <div class="flex-grid">
+                <div class="col">Color: {{ truck.color }}</div>
+                <div class="col">Plant: {{ truck.plant }}</div>
+              </div>
+              <div class="flex-grid">
+                <div class="col">Chassis: {{ truck.chassisNumber }}</div>
+              </div>
+            </div>
+          </mat-card-content>
+        </div>
+        <button matFab (click)="onEditTruck(truck.id)" class="custom-blue-btn margin-1rem">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button matFab (click)="onClickDelete(truck.id)" class="custom-blue-btn margin-1rem">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card>
+    </div>
+  </div>
+
+</div>
+

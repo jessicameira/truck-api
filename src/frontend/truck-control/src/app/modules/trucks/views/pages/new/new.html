@@ -1,0 +1,69 @@
+<div class="flex col">
+  <h2>New Truck</h2>
+</div>
+<mat-divider></mat-divider>
+<div class="truck-form-container">
+  <div class="form-header">
+    
+  </div>
+  <!-- Formulário -->
+  <form *ngIf="!loading" [formGroup]="truckForm" (ngSubmit)="onSubmit()" class="flex col create-form">
+    
+    <div class="flex col form-row width-100">
+      <div class="form-field">
+        <app-custom-select 
+          formControlName="model"
+          [label]="'Model'"
+          [options]="modelOptions">
+        </app-custom-select>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field class="full-width">
+          <mat-label>Year</mat-label>
+          <input matInput formControlName="yearManufacture" placeholder="2025">
+          <mat-error *ngIf="truckForm.get('yearManufacture')?.hasError('required')">
+            Year can't be empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <app-custom-select 
+          formControlName="plant"
+          [label]="'Plant'"
+          [options]="plantOptions">
+        </app-custom-select>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field class="full-width">
+          <mat-label>Color</mat-label>
+          <input matInput formControlName="color" placeholder="White">
+          <mat-error *ngIf="truckForm.get('color')?.hasError('required')">
+            Color can't be empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field class="full-width">
+          <mat-label>Chassis</mat-label>
+          <input matInput formControlName="chassisNumber" placeholder="9BF111060T5002156">
+          <mat-error *ngIf="truckForm.get('chassisNumber')?.hasError('required')">
+            Chassis number can't be empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button matButton="tonal" (click)="onCancel()" class="custom-gay-btn btn-width">
+        Cancel
+      </button>
+      <button matButton="filled" type="submit" class="custom-blue-btn btn-width">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

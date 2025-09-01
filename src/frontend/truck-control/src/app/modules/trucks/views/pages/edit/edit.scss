@@ -1,0 +1,44 @@
+.edit-form{
+  flex: 1;
+  width: 100%;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.form-row{
+  margin-top: 1rem;
+}
+
+.action-buttons{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-width{
+  width: -webkit-fill-available;
+}
+
+@media (min-width: 700px) {
+  .edit-form{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-row {
+    margin-top: 6rem;
+    width: 80%;
+  }
+
+  .action-buttons{
+    width: 80%;
+  }
+
+  .btn-width{
+    width: 16rem;
+  }
+}

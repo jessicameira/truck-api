@@ -1,0 +1,13 @@
+.footer {
+    background-color: #101111;
+    color: #53565A;
+    height: 3rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    
+    &:hover {
+        color: #939496;
+    }
+}

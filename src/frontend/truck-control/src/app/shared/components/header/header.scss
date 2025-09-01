@@ -1,0 +1,17 @@
+.header-bg {
+    background-color: #101111;
+    color: #F5F5F5;
+    height: 3rem;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}

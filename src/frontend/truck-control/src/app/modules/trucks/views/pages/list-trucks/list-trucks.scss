@@ -1,0 +1,95 @@
+.header-bg-btn{
+  display: flex;
+  background-color: var(--background-gray);
+  margin: 0 1rem 1rem 1rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.padding-5{
+  padding: .5rem;
+}
+
+.flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+}
+
+.table-wrapper{
+  display: none;
+}
+
+.card-list{
+  margin: 1rem;
+}
+
+.margin-1rem{
+  margin: 1rem;
+}
+
+.truck-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    th{
+      background-color: var(--primary-black);
+      color: var(--primary-white);
+      padding: 1rem .75rem 1rem .75rem;
+      text-align: left;
+    }
+
+    td {
+      padding-left: .75rem;
+      padding-right: .75rem ;
+      text-align: left;
+      border-bottom: 2px solid var(--background-gray);
+    }
+  } 
+}
+
+.actions{
+  text-align: right !important; 
+}
+
+.card{
+  display: flex;
+  background-color: var(--background-gray);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.desktop-header{
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .table-wrapper{
+    display: flex;
+    width: 100%;
+    div{
+      width: 100%;
+    }
+  }
+  .card-list{
+    display: none;
+  }
+  .desktop-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-header{
+    display: none;
+  }
+}
