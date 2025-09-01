@@ -51,6 +51,8 @@ Entre no diretório do projeto
 ```bash
   cd truck-api
 ```
+renomeie o arquivo .env.sample em src\backend\TruckControl.Api para .env
+Altere para a sua conexão de banco
 
 Instale as dependências
 
@@ -64,6 +66,8 @@ Inicie o servidor
 ```bash
   npm run dev
 ```
+Para acessar o front a url é: http://localhost:4200
+
 Para rodar apenas o back:
 ```bash
   npm run dev:backend
