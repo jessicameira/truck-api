@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TruckControl.Domain.Entities;
 using TruckControl.Domain.Enums;
 
-namespace TruckBack.Data.Context
+namespace TruckControl.Data.Context
 {
     public class AppDbContext : DbContext
     {

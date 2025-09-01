@@ -1,4 +1,4 @@
-using TruckBack.Data.Context;
+using TruckControl.Data.Context;
 
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;

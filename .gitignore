@@ -60,3 +60,9 @@ pids/
 *.db
 *.mdf
 *.ldf
+TestResults/
+CoverageReport/
+coverage.xml
+*.coverage.xml
+*.coverage.html
+coverage.cobertura.xml

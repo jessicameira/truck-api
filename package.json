@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:backend": "cd src/backend/Truckcontrol.api && dotnet watch run",
+    "dev:backend": "cd src/backend/TruckControl.Api && dotnet run",
     "dev:frontend": "cd src/frontend/truck-control && ng serve",
-    "build:backend": "cd backend/Truckcontrol.api && dotnet build",
-    "build:frontend": "cd frontend && ng build",
-    "install:all": "cd frontend && npm install"
+    "build:backend": "cd src/backend/TruckControl.Api && dotnet build",
+    "build:frontend": "cd src/frontend/truck-control && ng build",
+    "install:all": "cd src/frontend/truck-control && npm install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

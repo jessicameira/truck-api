@@ -1,6 +1,6 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
-using TruckBack.Data.Context;
+using TruckControl.Data.Context;
 
 using AutoMapper;
 using TruckControl.Application.Mapping;
