@@ -63,10 +63,12 @@ Instale as dependências
 
 Rode as migrations antes de iniciar:
 ```bash
+  cd src/backend
   dotnet ef database update --project TruckControl.Infrastructure --startup-project TruckControl.Api
+  cd ../..
 ```
 
-Inicie o servidor
+Inicie o servidor na raiz do projeto (dentro da pasta truck-api)
 
 ```bash
   npm run dev
@@ -100,6 +102,8 @@ Esse comando cria um xml, assim podemos criar o html para acompanhar no navegado
   reportgenerator -reports:"TruckControl.Api.Tests\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
   reportgenerator -reports:"TruckControl.Application.Tests\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
 ```
+
+Para visualizar entre na pasta coveragereport dentro do src/backend e abra o arquivo index.html com o navegador.
 
 ## Documentação da API
 
