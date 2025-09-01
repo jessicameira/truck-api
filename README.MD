@@ -51,9 +51,9 @@ Entre no diretório do projeto
 ```bash
   cd truck-api
 ```
-renomeie o arquivo .env.sample em src\backend\TruckControl.Api para .env
+renomeie o arquivo ´.env.sample´ em src\backend\TruckControl.Api para ´.env´
 Altere para a sua conexão de banco
-
+em alguns casos é necessário a flag ´TrustServerCertificate=True;´ na conexão.
 Instale as dependências
 
 ```bash
